@@ -1,0 +1,265 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Lugrasimo', cursive;
+}
+
+/*body{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /*background: url('background.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+}*/
+header {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    padding: 15px 100px;
+    background-color: rgb(103, 125, 250);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+    border-bottom: 3px solid beige;
+}
+
+h2 {
+    font-size: 2em;
+    color: #fff;
+    user-select: none;
+}
+
+h4 {
+    color: #fff;
+}
+
+.navigation {
+    /*width: 100%;
+    padding: 10px 10%;*/
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.navigation ul {
+    width: 100%;
+    text-align: right;
+}
+
+.navigation ul li {
+    display: inline-block;
+    list-style: none;
+    /*margin: 10px 10px;*/
+}
+
+.navigation ul li a {
+    position: relative;
+    font-size: 1.1em;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+}
+
+.user-pic {
+    width: 40px;
+    border: 2px solid black;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-left: 30px;
+    background-color: white;
+}
+
+.sub-menu-wrap {
+    position: absolute;
+    top: 100%;
+    right: 0%;
+    width: 320px;
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.5s;
+}
+
+.sub-menu-wrap.open-menu {
+    max-height: 400px;
+
+}
+
+.sub-menu-wrap h2 {
+    color: black;
+}
+
+.sub-menu {
+    background: white;
+    padding: 20px;
+    margin: 10px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-info img {
+    width: 50px;
+    border: 3px solid black;
+    border-radius: 50%;
+    margin-right: 15px;
+    background-color: white;
+}
+
+.sub-menu hr {
+    border: 0;
+    height: 1px;
+    width: 100%;
+    color: black;
+    margin: 15px 0 10px 0;
+}
+
+.sub-menu-link{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    margin: 12px 0;
+}
+
+.sub-menu-link p {
+    width: 100%;
+}
+
+.sub-menu-link img {
+    width: 40px;
+    border: 2px solid black;
+    border-radius: 50%;
+    padding: 8px;
+    margin-right: 10px;
+}
+
+.sub-menu-link span {
+    font-size: 22px;
+    transition: transform 0.5s;
+}
+
+.sub-menu-link:hover span {
+    transform: translateX(5px);
+}
+
+.sub-menu-link:hover p {
+    font-weight: 600;
+}
+
+.navigation a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+
+.navigation a:hover::after {
+    transform: scaleX(1);
+
+}
+
+.welcome {
+    display: flex;
+    flex-direction: column;
+    padding: 5px 80px 5px 80px;
+    margin-left: 2px;
+    margin-right: 2px;
+    height: 200px;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: beige;
+    color: black;
+    border: 3px solid black;
+    border-radius: 5px;
+    margin-top: 100px;
+    margin-bottom: 5px;
+}
+
+.main{
+    display: flex;
+    justify-content: space-between;
+    max-height: 1000px;
+}
+
+.materials{
+    width: 70%;
+    /*border: 2px solid black;*/
+    margin: 10px 10px;
+    padding: 10px 10px;
+    height: 100%;
+}
+
+.materials h3{
+    color: black;
+}
+
+.box{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 10px 10px;
+    padding: 10px 10px;
+    /*background-color: beige;*/
+}
+
+.box ul li {
+    list-style: none;
+    text-decoration: none;
+}
+
+.doubt{
+    width: 30%;
+    border: 2px solid black;
+    margin: 10px 10px;
+    padding: 10px 10px;
+    height: 100%;
+}
+
+.doubt form {
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.doubt form input {
+    width: 90%;
+    height: 30px;
+
+}
+
+.doubt form .line {
+    display: flex;
+    flex-direction: row;
+}
+
+.doubt form img {
+    height: 30px;
+    width: 30px;
+    border: 2px solid black;
+    border-radius: 2px;
+    top: 10%;
+    padding: 5px;
+    background-color: rgb(103, 125, 250);
+}
+
+.doubt form img:hover {
+    background-color: white;
+    cursor: pointer;
+}
