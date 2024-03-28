@@ -1,0 +1,10 @@
+UNOPTIMIZED QUERY FOR FETCHING IN WELCOME STUDENT PAGE 
+
+SELECT ls.s_name as Student_Name,ss.student_id as Student_ID,lt.t_name as Teacher_Name,s.s_id as Subject_ID,s.s_name as Subject_Name
+from login_teacher as lt, login_student as ls, subjects as s, student as ss, teacher as st
+where ls.s_uid=ss.student_id AND
+ss.sub_uid=s.s_id AND
+ss.sub_uid=st.sub_uid AND
+lt.t_uid=st.t_uid AND
+ss.student_id=100 
+order by s.s_id
