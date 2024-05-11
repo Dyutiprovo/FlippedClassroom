@@ -8,11 +8,19 @@
 </head>
 <body>
     <?php
-        $student_uid=$_GET["uid"];
+        
+        // $student_uid=$_GET["uid"];
         $server = "localhost";
         $username = "root";
         $password = "";
         $database1 = "fc_new";
+        session_start();
+        if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+            header("Location: login.php");  // Redirect to the login page if not logged in
+            exit;
+        }
+        $uid = $_SESSION['uid'];  // Ensure you get the UID from the session
+      
         $conn = mysqli_connect($server, $username, $password, $database1);
         $query="SELECT ls.s_name as Student_Name,ss.student_id as Student_ID,lt.t_name as Teacher_Name,s.s_id as Subject_ID,s.s_name as Subject_Name
         from login_teacher as lt, login_student as ls, subjects as s, student as ss, teacher as st
@@ -20,7 +28,7 @@
         ss.sub_uid=s.s_id AND
         ss.sub_uid=st.sub_uid AND
         lt.t_uid=st.t_uid AND
-        ss.student_id=$student_uid 
+        ss.student_id=$uid
         order by s.s_id";
         
         $result=mysqli_query($conn,$query);
@@ -90,6 +98,7 @@
                 </div>
             <?php endforeach; ?>
         </div>
+        
            
     </section>
 <script>

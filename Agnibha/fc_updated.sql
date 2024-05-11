@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 30, 2024 at 03:45 PM
+-- Generation Time: May 11, 2024 at 07:11 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -29,18 +29,19 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `login_student` (
   `s_uid` varchar(10) NOT NULL,
-  `s_name` varchar(20) NOT NULL
+  `s_name` varchar(20) NOT NULL,
+  `password` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `login_student`
 --
 
-INSERT INTO `login_student` (`s_uid`, `s_name`) VALUES
-('100', 'AGNIBHA'),
-('101', 'DYUTIPROVO'),
-('102', 'SAMANTA'),
-('103', 'AKASH');
+INSERT INTO `login_student` (`s_uid`, `s_name`, `password`) VALUES
+('100', 'AGNIBHA', 'abc'),
+('101', 'DYUTIPROVO', '123'),
+('102', 'SAMANTA', 'good'),
+('103', 'AKASH', 'hello');
 
 -- --------------------------------------------------------
 
@@ -50,22 +51,23 @@ INSERT INTO `login_student` (`s_uid`, `s_name`) VALUES
 
 CREATE TABLE `login_teacher` (
   `t_uid` int(10) NOT NULL,
-  `t_name` varchar(20) NOT NULL
+  `t_name` varchar(20) NOT NULL,
+  `password` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `login_teacher`
 --
 
-INSERT INTO `login_teacher` (`t_uid`, `t_name`) VALUES
-(1000, 'RANIT'),
-(1001, 'RITESH'),
-(1002, 'SAYANI'),
-(1003, 'SUPARNA'),
-(1004, 'SAMRAT'),
-(1005, 'SWAPNA'),
-(1006, 'SOUMITA'),
-(1007, 'SHARABH');
+INSERT INTO `login_teacher` (`t_uid`, `t_name`, `password`) VALUES
+(1000, 'RANIT', 'good'),
+(1001, 'RITESH', '4123'),
+(1002, 'SAYANI', '1234'),
+(1003, 'SUPARNA', 'bye'),
+(1004, 'SAMRAT', 'helo'),
+(1005, 'SWAPNA', 'good123'),
+(1006, 'SOUMITA', 'world'),
+(1007, 'SHARABH', '9872');
 
 -- --------------------------------------------------------
 
@@ -81,6 +83,16 @@ CREATE TABLE `materials` (
   `material_path` varchar(100) NOT NULL,
   `upload_date` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `materials`
+--
+
+INSERT INTO `materials` (`sub_uid`, `material_name`, `material_size`, `material_type`, `material_path`, `upload_date`) VALUES
+('PEC-IT602B', 'chpass.png', 724, 'image/png', 'uploads/chpass.png', '2024-04-30 14:13:34'),
+('PEC-IT602B', 'admin_login.png', 14443, 'image/png', 'uploads/admin_login.png', '2024-05-10 15:55:34'),
+('PCC-CS602', 'up-arrow.png', 8440, 'image/png', 'uploads/up-arrow.png', '2024-05-11 03:44:39'),
+('OEC-IT601B', 'profile.png', 853, 'image/png', 'uploads/profile.png', '2024-05-11 03:46:23');
 
 -- --------------------------------------------------------
 

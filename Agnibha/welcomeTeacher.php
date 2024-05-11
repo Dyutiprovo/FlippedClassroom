@@ -7,6 +7,30 @@
     <link rel="stylesheet" href="teacherStyle.css">
 </head>
 <body>
+<?php
+        
+        // $student_uid=$_GET["uid"];
+        $server = "localhost";
+        $username = "root";
+        $password = "";
+        $database1 = "fc_new";
+        session_start();
+        if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+            header("Location: login.php");  // Redirect to the login page if not logged in
+            exit;
+        }
+        $uid = $_SESSION['uid'];  // Ensure you get the UID from the session
+        // $uid='1000';
+        $conn = mysqli_connect($server, $username, $password, $database1);
+        $query="SELECT lt.t_name as Teacher_Name , lt.t_uid as Teacher_ID ,s.s_name as Subject_Name,s.s_id as Subject_ID
+        FROM login_teacher lt,subjects s,teacher t
+        WHERE lt.t_uid=t.t_uid AND s.s_id=t.sub_uid and lt.t_uid=$uid";
+        $result=mysqli_query($conn,$query);
+        $row=mysqli_fetch_all($result,MYSQLI_ASSOC)
+        // $uid=$_POST["UID"];
+        
+        // $_SESSION['UID']=$uid;
+    ?>
 <header>
         <h2>Flipped Classroom</h2>
         <nav class="navigation">
@@ -54,61 +78,29 @@
     </header>
     <section class="welcome">
         <h1 class="h-primary">Welcome to Classroom</h1>
-        <p>Faculty Name:</p>
-        <p>Faculty Id:</p>
+        <p>Faculty Name:<?php echo $row[0]['Teacher_Name'] ?> </p>
+        <p>Faculty Id:<?php echo $row[0]['Teacher_ID'] ?></p>
     </section>
     <section class="subjects-container">
         <h1 class="h-primary center">Subjects in your Current Course</h1>
+        
         <div class="subjects">
-            <div class="box">
+            
+            <br>
+            <?php foreach ($row as $material): ?>
+                <div class="box">
                 <ul>
-                    <li class="sub_name"><a href="subject.php" target="_parent">Subject</a></li>
-                    <li class="faculty">Semister</li>
+
+                    <li class="sub_name"><a href="subjectT.php?Subject_Name=<?php echo $material['Subject_Name'] ?>" target="_parent" >Subject:<?php echo $material['Subject_Name']?></a></li>
+                    <?php $_SESSION['T_Subject_ID']=$material['Subject_ID'] ?>
+
+                    <!-- <li class="faculty">Faculty:<?php echo $material['Teacher_Name']?></li> -->
                 </ul>
-            </div>
-            <div class="box">
-                <ul>
-                    <li class="sub_name"><a href="subjectT.php" target="_parent">Subject</a></li>
-                    <li class="faculty">Semister</li>
-                </ul>
-            </div>
-            <div class="box">
-                <ul>
-                    <li class="sub_name"><a href="subjectT.php" target="_parent">Subject</a></li>
-                    <li class="faculty">Semister</li>
-                </ul>
-            </div>
-            <div class="box">
-                <ul>
-                    <li class="sub_name"><a href="subjectT.php" target="_parent">Subject</a></li>
-                    <li class="faculty">Semister</li>
-                </ul>
-            </div>
-            <div class="box">
-                <ul>
-                    <li class="sub_name"><a href="subjectT.php" target="_parent">Subject</a></li>
-                    <li class="faculty">Semister</li>
-                </ul>
-            </div>
-            <div class="box">
-                <ul>
-                    <li class="sub_name"><a href="subjectT.php" target="_parent">Subject</a></li>
-                    <li class="faculty">Semister</li>
-                </ul>
-            </div>
-            <div class="box">
-                <ul>
-                    <li class="sub_name"><a href="subjectT.php" target="_parent">Subject</a></li>
-                    <li class="faculty">Semister</li>
-                </ul>
-            </div>
-            <div class="box">
-                <ul>
-                    <li class="sub_name"><a href="subjectT.php" target="_parent">Subject</a></li>
-                    <li class="faculty">Semister</li>
-                </ul>
-            </div>
+                </div>
+            <?php endforeach; ?>
         </div>
+        
+           
     </section>
 <script>
     let subMenu = document.getElementById("subMenu");

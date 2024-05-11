@@ -11,7 +11,8 @@
 <body>
     <?php
     include 'partials/_dbconnect.php';
-    $subject_id = 'PEC-IT602B'; // Define the subject ID for which details are required
+    session_start();
+    $subject_id = $_SESSION['T_Subject_ID']; // Define the subject ID for which details are required
     
     // SQL to fetch required details
     $query = "SELECT lt.t_name as Teacher_Name, s.s_name as Subject_Name, s.s_id as Subject_ID,
