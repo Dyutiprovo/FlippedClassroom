@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +8,33 @@
     <link rel="stylesheet" href="Home_Style.css">
 </head>
 <body>
+
+
+
+
+<!-- <?php try {
+    //code...
+    session_start();  
+    if (isset($_SESSION['loggedin']) || $_SESSION['loggedin'] == true and $_SESSION['user_type']=="student") {
+        header("location:welcomeStudent.php");  // Redirect to the login page if not logged in
+        exit;
+    }
+    if (isset($_SESSION['loggedin']) || $_SESSION['loggedin'] == true and $_SESSION['user_type']=="teacher") {
+        header("location:welcomeTeacher.php");  // Redirect to the login page if not logged in
+        exit;
+    } 
+} catch (\Throwable $th) {
+    //throw $th;
+    echo "Error!";
+}
+    
+    ?>  -->
+
+
+
+
+
+
     <header>
         <h2>Flipped Classroom</h2>
         <nav class="navigation">
@@ -39,5 +67,9 @@
             <button type="submit" class="submit-btn">Login</button>
         </form>
     </div>
+    
 </body>
+
 </html>
+
+
