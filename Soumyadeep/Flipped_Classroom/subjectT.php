@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="subjectTeacherStyle.css">
+    <link rel="stylesheet" href="subTstyle.css">
 </head>
 <body>
     <header>
@@ -66,39 +66,45 @@
             <h3>Uploaded Materials</h3>
             <div class="box">
                 <ul>
-                    <li>material:</li>
+                    <li>material:<a href="9_Essential_Chords.pdf" target="_blank"> New Material </a></li>
                     <li>date:</li>
                 </ul>
+                <img src="delete.png">
             </div>
             <div class="box">
                 <ul>
                     <li>material:</li>
                     <li>date:</li>
                 </ul>
+                <img src="delete.png">
             </div>
             <div class="box">
                 <ul>
                     <li>material:</li>
                     <li>date:</li>
                 </ul>
+                <img src="delete.png">
             </div>
             <div class="box">
                 <ul>
                     <li>material:</li>
                     <li>date:</li>
                 </ul>
+                <img src="delete.png">
             </div>
             <div class="box">
                 <ul>
                     <li>material:</li>
                     <li>date:</li>
                 </ul>
+                <img src="delete.png">
             </div>
             <div class="box">
                 <ul>
                     <li>material:</li>
                     <li>date:</li>
                 </ul>
+                <img src="delete.png">
             </div>
         </div>
         <div class="students">
