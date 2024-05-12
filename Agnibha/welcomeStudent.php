@@ -16,7 +16,7 @@
         $database1 = "fc_new";
         session_start();
         if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
-            header("Location: login.php");  // Redirect to the login page if not logged in
+            header("location:index.php");  // Redirect to the login page if not logged in
             exit;
         }
         $uid = $_SESSION['uid'];  // Ensure you get the UID from the session
@@ -68,7 +68,7 @@
                         <p>Help and Support</p>
                         <span>></span>
                     </a>
-                    <a href="#" class="sub-menu-link">
+                    <a href="logout.php" class="sub-menu-link">
                         <img src="logout.png">
                         <p>Logout</p>
                         <span>></span>
