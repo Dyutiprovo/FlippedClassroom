@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="subTeacherStyle.css">
+    <link rel="stylesheet" href="subjectTeacherStyle.css">
 </head>
 
 <body>
@@ -117,8 +117,15 @@
                                 href="download.php?FileNo=<?php echo $material['material_name']; ?>"><?php echo htmlspecialchars($material['material_name']); ?></a>
                         </li>
                         <li>date: <?php echo htmlspecialchars($material['upload_date']); ?></li>
+                        <li>
+                            <form action="delete.php" method="post">
+                                <input type="hidden" name="material_name" value="<?php echo $material['material_name']; ?>">
+                                <input type="hidden" name="subject_uid" value="<?php echo $row[0]['Subject_ID']; ?>">
+                                <button type="submit" class="delete-btn"><img src="delete.png"></button>
+                            </form>
+                        </li>
                     </ul>
-                    <button type="submit" class="delete-btn"><img src="delete.png"></button>
+
                 </div>
             <?php endforeach; ?>
         </div>
