@@ -118,7 +118,7 @@
                         </li>
                         <li>date: <?php echo htmlspecialchars($material['upload_date']); ?></li>
                     </ul>
-                    <img src="delete.png">
+                    <button type="submit" class="delete-btn"><img src="delete.png"></button>
                 </div>
             <?php endforeach; ?>
         </div>
