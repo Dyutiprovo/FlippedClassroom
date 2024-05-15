@@ -258,8 +258,7 @@ h4 {
 
 .box .delete-btn:hover{
     cursor: pointer;
-    width: 40px;
-    height: 40px;
+    background-color: rgb(103, 125, 250);
 
 }
 
