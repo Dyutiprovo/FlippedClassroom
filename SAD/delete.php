@@ -4,8 +4,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Collect subject_uid and material_name from POST
     $subject_uid = $_POST['subject_uid'];
     $material_name = $_POST['material_name'];
-
-    // Database connection
+    
+    //Connect to database
     $db_host = "localhost";
     $db_user = "root";
     $db_pass = "";
